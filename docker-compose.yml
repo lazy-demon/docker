@@ -8,14 +8,16 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: recon
       POSTGRES_PASSWORD: "postgres"
-  backend:
+    volumes:
+    - pg_data:/var/lib/postgresql/data
+  frontend:
     image: angular
     container_name: angular
     build:
       context: ./angular
     ports:
       - "9000:80"
-  frontend:
+  backend:
     image: spring-boot
     container_name: spring-boot
     build:
@@ -24,3 +26,6 @@ services:
       - "4200:80"
     depends_on:
       - backend
+
+  volumes:
+    pg_data:
