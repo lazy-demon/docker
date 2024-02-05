@@ -8,8 +8,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: recon
       POSTGRES_PASSWORD: "postgres"
-    volumes:
-      - recon:/var/lib/postgresql/data
   backend:
     image: angular
     container_name: angular
