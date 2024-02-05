@@ -1,3 +1,4 @@
 FROM openjdk:11-jre-slim
-# COPY --from=build /home/app/target/demo-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
-ENTRYPOINT ["java","-jar","/usr/local/lib/recon.jar"]
+COPY recon.jar /app/recon.jar
+WORKDIR /app
+CMD ["java", "-jar", "recon.jar"]
