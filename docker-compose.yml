@@ -16,14 +16,14 @@ services:
     build:
       context: ./angular
     ports:
-      - "9000:80"
+      - "4200:80"
   backend:
     image: spring-boot
     container_name: spring-boot
     build:
       context: ./spring-boot
     ports:
-      - "4200:8080"
+      - "8080:8080"
     depends_on:
       - postgres
 volumes:
