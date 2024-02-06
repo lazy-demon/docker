@@ -25,7 +25,7 @@ services:
     ports:
       - "4200:80"
     depends_on:
-      - backend
-
-  volumes:
-    pg_data:
+      - postgres
+volumes:
+  pg_data: 
+    driver: local
