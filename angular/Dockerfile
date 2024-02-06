@@ -1,2 +1,4 @@
 FROM nginx:alpine
-COPY --from=builder /* /usr/share/nginx/html/
+COPY /* /usr/share/nginx/html/
+expose 80
+CMD ["nginx", "-g", "daemon off;"]
